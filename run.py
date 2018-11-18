@@ -14,6 +14,7 @@ def main():
             result = classifier.classify(features)
             confidence = classifier.confidence(features)
             print("Sentiment:", result)
+            print("Confidence:", confidence)
 
 if __name__ == '__main__':
     main()
