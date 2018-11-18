@@ -4,6 +4,10 @@ import requests
 import json
 import pdb;
 
+# Used for sorting the Penn News Corpus into three text files (one for each sentiment)
+# Uses online api
+# Please replce training data files with your own human classified sentiment files
+
 cwd = os.getcwd()
 prev_dir = os.path.normpath(os.getcwd() + os.sep + os.pardir)
 

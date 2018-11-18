@@ -18,21 +18,27 @@ class Classifier(ClassifierI):
                              SklearnClassifier(SGDClassifier())]
 
     def train(self, training_set):
+        # Train all sci-kit classifiers
         for i in range(len(self._classifiers)):
             self._classifiers[i].train(training_set)
+        # NLTK native naive bayes classifier is added here
         self._classifiers.append(NaiveBayesClassifier.train(training_set))
 
     def count_votes(self, votes):
         positive = votes.count("pos")
         negative = votes.count("neg")
         neutral = votes.count("neutral")
+        # Positive or negative state if more votes than the other
+        # and equal to or greater than neutral
         if positive > negative and positive >= neutral:
             return "pos"
         elif negative > positive and negative >= neutral:
             return "neg"
+        # Neutral if greatest number of votes or positive and negative are equal
         else:
             return "neutral"
 
+    # Basic NLTK Classifier functions
     def classify(self, features):
         votes = []
         for classifier in self._classifiers:

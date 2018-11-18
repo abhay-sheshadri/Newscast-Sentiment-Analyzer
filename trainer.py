@@ -24,7 +24,7 @@ def main():
     set_length = math.floor(len(feature_sets) / 2)
     training_set = feature_sets[:set_length]
     testing_set = feature_sets[set_length:]
-    # Train Naive Bayes algorithm and print accuracy
+    # Train classifer (see classifier.py for different classifiers in use) and print accuracy
     classifier = Classifier()
     classifier.train(training_set)
     print("Accuracy: {}".format(nltk.classify.accuracy(classifier, testing_set)))
