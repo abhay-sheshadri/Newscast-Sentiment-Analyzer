@@ -1,5 +1,5 @@
 import pickle
-import nltk
+import classifier
 import utils
 
 # Just a loop where the text enetered is classified if it is not blank
@@ -12,6 +12,7 @@ def main():
             words = utils.get_words_from_sentence(sentence)
             features = dict([(word, True) for word in words])
             result = classifier.classify(features)
+            confidence = classifier.confidence(features)
             print("Sentiment:", result)
 
 if __name__ == '__main__':

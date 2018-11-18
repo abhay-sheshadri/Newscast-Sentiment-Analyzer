@@ -2,6 +2,7 @@ import utils
 import nltk
 import math
 import pickle
+from classifier import Classifier
 
 # Number of most occuring words used
 max = 5000
@@ -24,7 +25,8 @@ def main():
     training_set = feature_sets[:set_length]
     testing_set = feature_sets[set_length:]
     # Train Naive Bayes algorithm and print accuracy
-    classifier = nltk.NaiveBayesClassifier.train(training_set)
+    classifier = Classifier()
+    classifier.train(training_set)
     print("Accuracy: {}".format(nltk.classify.accuracy(classifier, testing_set)))
     # Save classifer to file
     save_classifier = open(r"training/classifier.pickle", "wb")
