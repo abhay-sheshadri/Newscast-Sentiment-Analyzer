@@ -5,7 +5,7 @@ Logisitic Regression, and Stochastic Regression. Each classifier votes on the se
 decide the winner.
 
 # Running the classifier
-Make sure you have python installed.  Run `pip install -r requirements.txt` in your sehll
+Make sure you have python installed.  Run `pip install -r requirements.txt` in your shell.
 Replace the training data files in training/data with your own.  Then, run `python trainer.py` in your shell.  It should print the accuracy of the classifier as well.
 In order to use the program, run `python run.py` in your shell.  You can get the sentiment of sentences.
 
